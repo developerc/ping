@@ -89,7 +89,7 @@ int DoPingOperation(){
 		return 0;
 	}
 
-	//getting pointer to hostent of IP-address 192.168.1.110 (my own)
+	//getting pointer to hostent of IP-address 127.0.0.1 (my own)
     if( inet_aton( ash, &in ))
         if(hp = gethostbyaddr((char*)&in.s_addr,sizeof(in.s_addr),AF_INET))
                         printf( "%s\n", hp->h_name );
@@ -101,7 +101,7 @@ int DoPingOperation(){
 		sDest.sin_addr.s_addr = inet_addr(ash);
         sDest.sin_family = AF_INET;
         sDest.sin_port = 0;
-        printf("Pinging 192.168.1.100 [%s]\n", inet_ntoa(sDest.sin_addr));
+        printf("Pinging 127.0.0.1 [%s]\n", inet_ntoa(sDest.sin_addr));
 
 		//sending echo-request
 	static ECHOREQUEST echoReq;
